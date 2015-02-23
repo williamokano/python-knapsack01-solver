@@ -10,13 +10,18 @@ class Knapsack01(object):
         self.update(capacity, numberOfItems, dataset)
 
     def createMatrixes(self):
+        self.valuesSet = []
+        self.takeSet = []
+        
         for _ in range(self.numberOfItems + 1):
             rowVSet = []
+            rowTSet = []
             for _ in range(self.capacity + 1):
                 rowVSet.append(0)
+                rowTSet.append(0)
             
             self.valuesSet.append(rowVSet)
-            self.takeSet.append(rowVSet.copy())
+            self.takeSet.append(rowTSet)
 
     def update(self, capacity, numberOfItems, dataset):
         self.capacity = capacity
