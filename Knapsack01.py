@@ -7,12 +7,7 @@ class Knapsack01(object):
     takeSet = []
 
     def __init__(self, capacity, numberOfItems, dataset):
-        self.capacity = capacity
-        self.numberOfItems = numberOfItems
-        self.dataSet = dataset
-        
-        self.createMatrixes()
-        self.solve()
+        self.update(capacity, numberOfItems, dataset)
 
     def createMatrixes(self):
         for _ in range(self.numberOfItems + 1):
@@ -22,6 +17,13 @@ class Knapsack01(object):
             
             self.valuesSet.append(rowVSet)
             self.takeSet.append(rowVSet.copy())
+
+    def update(self, capacity, numberOfItems, dataset):
+        self.capacity = capacity
+        self.numberOfItems = numberOfItems
+        self.dataSet = dataset
+        
+        self.createMatrixes()
     
     def solve(self):
         #
