@@ -12,4 +12,8 @@ for line in iter(sys.stdin.readline, ''):
     items.append([int(item) for item in line[0:]])
 
 knapsack = Knapsack01(capacidade, len(items), items)
-print(knapsack.solve())
+ans = knapsack.solve()
+print(ans)
+
+for solution in ans[2]:
+    print(solution) 
